@@ -1,4 +1,6 @@
-doing wait...
+rehne de done 
+
+next ques daalra mai new file me 
 
 
 An interesting number is a positive number whose digits form an alternating even-odd sequence. In this sequence, the even digits occupy the odd indices, and the odd digits occupy the even indices. e.g. 232 or 4 is an interesting number whereas 3 or 34 or 344 not. 6 7 8 priority_queue<int, vector<int>, greater<int>> pq; 9 10 pq.push(2); 11 pq.push(4); You are given an integer K. Find the Kth smallest interesting number. The answer should not have any leading zeros. Additionally, note that the sequence follow 1-based indexing. 12 pq.push(6); 13 pq.push(8); 14 15 Function description 16 return 0; 17 Complete the function solve(). This function takes the following parameter and returns the required answer: 18 } 19 20 int main() { 21 K: Represents the Kth number 22 ios::sync_with_stdio(0); 23 cin.tie(0); Input format for custom testing 24 int T; 25 cin >> T; Note: Use this input format if you are testing against custom input or writing 26 for(int t_i = 0; i < T; t_i++) code in a language where we don't provide boilerplate code 27 { 28 int K; 29 The first line contains 7, which represents the number of test cases. cin >> K; 30 For each test case: 31 long long out_; • The first line contains a number K denoting the Kth smallest number, which is supposed to be found out.. 32 out solve(K); 33 cout << out_3 cout << "\n"; 34 35 36 } } Output format For each test case in a new line, print the answer.
