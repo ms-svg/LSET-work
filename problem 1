@@ -1,3 +1,72 @@
+include <iostream>
+#include <queue>
+#include <string>
+using namespace std;
+
+// Function to find the Kth smallest interesting number
+int findKthInterestingNumber(int K) {
+    queue<string> q;
+
+    // Start with all single-digit interesting numbers (even numbers)
+    q.push("2");
+    q.push("4");
+    q.push("6");
+    q.push("8");
+
+    int count = 0;
+
+    // BFS approach to generate interesting numbers in increasing order
+    while (!q.empty()) {
+        string currentNumber = q.front();
+        q.pop();
+
+        // Convert the current string number to integer
+        int interestingNumber = stoi(currentNumber);
+
+        // Count each generated interesting number
+        count++;
+        if (count == K) {
+            if (K>4) {
+                interestingNumber--;
+            }
+            return interestingNumber; // Kth interesting number found
+        }
+
+        // Determine the next digit to add based on the current number's length
+        bool nextIndexIsOdd = (currentNumber.length() % 2 == 0);
+
+        // Append appropriate digits based on position parity
+        if (nextIndexIsOdd) {
+            // Append odd digits at even positions (1, 3, 5, etc.)
+            for (char oddDigit : {'1', '3', '5', '7', '9'}) {
+                q.push(currentNumber + oddDigit);
+            }
+        } else {
+            // Append even digits at odd positions (0, 2, 4, etc.)
+            for (char evenDigit : {'2', '4', '6', '8'}) {
+                q.push(currentNumber + evenDigit);
+            }
+        }
+    }
+    return -1; // In case K is too large
+}
+
+void solve() {
+    int T;
+    cin >> T;
+    while (T--) {
+        int K;
+        cin >> K;
+        cout << findKthInterestingNumber(K) << endl;
+    }
+}
+
+int main() {
+    solve();
+    return 0;
+}
+
+
 rehne de done 
 
 next ques daalra mai new file me 
